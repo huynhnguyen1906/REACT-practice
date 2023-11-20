@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React-practice</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="root2"></div>
+    
+    <script type="text/babel"> 
+        
+        const postItem = 
+            <div className='title'>
+                <h2 id='sub-title'>Học React</h2>
+                <p id='text'>học từ đầu xuống cuối</p>
+            </div>
+        const ulDOM = 
+            <ul>
+                <li>abc</li>
+                <li>dqw</li>
+                <li>rwg</li>
+                <li>qeg</li>
+            </ul>
+
+                
+        // use reactDOM to render site UI
+        const root = document.getElementById('root');
+        const root2 = document.getElementById('root2');
+
+        const DOMroot = ReactDOM.createRoot(root)
+        DOMroot.render(postItem);
+        ReactDOM.createRoot(root2).render(ulDOM);
+
+    </script>
+</body>
+</html>
