@@ -15,32 +15,62 @@
 </head>
 <body>
     <div id="root"></div>
-    <div id="root2"></div>
     
     <script type="text/babel"> 
         
-        const postItem = 
-            <div className='title'>
-                <h2 id='sub-title'>Học React</h2>
-                <p id='text'>học từ đầu xuống cuối</p>
-            </div>
-        const ulDOM = 
-            <ul>
-                <li>abc</li>
-                <li>dqw</li>
-                <li>rwg</li>
-                <li>qeg</li>
-            </ul>
+        function PostItem({
+            title,
+            content,
+            time,
+            callback = () => {}
+        }) {
 
-                
-        // use reactDOM to render site UI
-        const root = document.getElementById('root');
-        const root2 = document.getElementById('root2');
+            callback()
+            return (
+                <div className='post'>
+                    <h2 className='post_title'>{title}</h2>
+                    <p className='post_text'>{content}</p>
+                    <p className='post_time'><small>{time}</small></p>
+                    <div className='post_btns'>
+                        <button className='post_btn'>Read more</button>
+                    </div>
+                </div>
+            )
+        }
 
-        const DOMroot = ReactDOM.createRoot(root)
-        DOMroot.render(postItem);
-        ReactDOM.createRoot(root2).render(ulDOM);
+        //App.js
+        function App() {
+            return (
+                <div id ='wrapper'>
+                    <PostItem 
+                        title='Đây là thông báo 1'
+                        content='Nội dung thông báo 1'
+                        time='đăng tải vào dd/mm/yyyy'
+                        callback={function() {
+                            console.log('Đây là callback')
+                        }}
+                    />
+                    <PostItem 
+                        title='Đây là thông báo 2'
+                        content='Nội dung thông báo 2'
+                        time='đăng tải vào dd/mm/yyyy'
+                    />
+                    <PostItem 
+                        title='Đây là thông báo 3'
+                        content='Nội dung thông báo 3'
+                        time='đăng tải vào dd/mm/yyyy'
+                    />
+                    <PostItem 
+                        title='Đây là thông báo 4'
+                        content='Nội dung thông báo 4'
+                        time='đăng tải vào dd/mm/yyyy'
+                    />
+                </div>
+            )
+        }
 
+        //index.js
+        ReactDOM.render(<App />, document.getElementById('root'));
     </script>
 </body>
 </html>
