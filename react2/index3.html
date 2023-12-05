@@ -11,6 +11,25 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
+        .btn {
+            display: block;
+            height: 30px;
+            width: 100px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #c59c9c;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #e96666;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background-color: #df3030;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +67,12 @@
                     props.href = href;
                 }
                 return (
-                    <Component {...props}>{title}</Component>
+                    <Component 
+                        className='btn'
+                        {...props}
+                    >
+                        {title}
+                    </Component>
                 )
             }
 
@@ -62,6 +86,9 @@
                             onClick={() => {
                                 console.log('clicked');
                             }}
+                        />
+                        <Button 
+                            title='Click me'
                             href='https://google.com'
                         />
                     </div>
