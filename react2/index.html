@@ -291,10 +291,10 @@
     }
 ]
         
-        const CourseItem = ({ data }) => {
+        const CourseItem = ({ data, onClick }) => {
             return(
             <div> 
-                <h2>{data.title}</h2>
+                <h2 onClick={() => onClick(data)}>{data.title}</h2>
                 <img src={data.image_url} alt={data.title}/>
                 <p>{data.description}</p>
                 <p>{data.students_count}</p>
@@ -303,6 +303,11 @@
         }
         //App.js
         function App() {
+
+            const handleClick = (course) => {
+                alert(course.title)
+            }
+
             return (
                 <div id='wrapper'>
                     {courses.map((course) => {
@@ -310,6 +315,7 @@
                         <CourseItem 
                                 key={course.id}  
                                 data={course}
+                                onClick={handleClick}
                             />
                         )
                     })}
