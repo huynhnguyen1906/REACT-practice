@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 // create a new component. This component should produce some HTML
 
@@ -13,4 +13,6 @@ function App() {
 }
 
 //render this component to the screen
-ReactDOM.render(<App />, document.querySelector("#root"));
+// ReactDOM.render(<App />, document.querySelector("#root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
