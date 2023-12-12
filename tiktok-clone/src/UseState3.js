@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function App3() {
+function UseState3() {
 	const [job, setJob] = useState("")
 	const [jobs, setJobs] = useState(() => {
 		const storageJobs = JSON.parse(localStorage.getItem("jobs"))
@@ -52,4 +52,4 @@ function App3() {
 	)
 }
 
-export default App3
+export default UseState3

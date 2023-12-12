@@ -15,7 +15,7 @@ const courses = [
 	},
 ]
 
-function App2() {
+function UseState2() {
 	const [user, setUser] = useState("")
 	const [email, setEmail] = useState("")
 	const [checked, setChecked] = useState(1)
@@ -77,4 +77,4 @@ function App2() {
 	)
 }
 
-export default App2
+export default UseState2
