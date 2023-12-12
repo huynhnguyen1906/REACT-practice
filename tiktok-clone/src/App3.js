@@ -2,10 +2,19 @@ import { useState } from "react"
 
 function App3() {
 	const [job, setJob] = useState("")
-	const [jobs, setJobs] = useState([])
+	const [jobs, setJobs] = useState(() => {
+		const storageJobs = JSON.parse(localStorage.getItem("jobs"))
+
+		return storageJobs || []
+	})
 
 	const handleSubmit = () => {
-		setJobs((prev) => [...prev, job])
+		setJobs((prev) => {
+			const newJobs = [...prev, job]
+			const jsonJobs = JSON.stringify(newJobs)
+			localStorage.setItem("jobs", jsonJobs)
+			return newJobs
+		})
 		setJob("")
 	}
 
