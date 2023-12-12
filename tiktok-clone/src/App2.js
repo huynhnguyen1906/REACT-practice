@@ -38,6 +38,9 @@ function App2() {
 			}
 		})
 	}
+	const handleChecked2 = () => {
+		console.log(submit.join(", "))
+	}
 
 	return (
 		<div style={{ padding: 32 }}>
@@ -69,7 +72,7 @@ function App2() {
 					{course.name}
 				</div>
 			))}
-			<button>submit</button>
+			<button onClick={handleChecked2}>submit</button>
 		</div>
 	)
 }
