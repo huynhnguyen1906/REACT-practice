@@ -18,6 +18,16 @@ function App3() {
 		setJob("")
 	}
 
+	const handleDelete = (index) => {
+		setJobs((prev) => {
+			const newJobs = [...prev]
+			newJobs.splice(index, 1)
+			const jsonJobs = JSON.stringify(newJobs)
+			localStorage.setItem("jobs", jsonJobs)
+			return newJobs
+		})
+	}
+
 	return (
 		<div style={{ padding: 32 }}>
 			<h1>App3 || To to list</h1>
@@ -27,8 +37,14 @@ function App3() {
 				{jobs.map((job, index) => (
 					<li key={index}>
 						{job}
-						<button style={{ margin: 20 }}>edit</button>
-						<button>delete</button>
+						<button
+							style={{ margin: 20 }}
+							onClick={() => {
+								handleDelete(index)
+							}}
+						>
+							delete
+						</button>
 					</li>
 				))}
 			</ul>
