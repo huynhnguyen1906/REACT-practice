@@ -35,7 +35,7 @@ function UseState1() {
 			firstName: "Nguyen",
 			lastName: "Van B",
 			age: 21,
-			address: "Ha Noi",
+			address: "Japan",
 		})
 	}
 
