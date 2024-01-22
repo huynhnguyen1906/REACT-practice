@@ -1,12 +1,13 @@
 import React from "react"
 import { memo } from "react"
 
-function MemoReact() {
-	console.log("memo")
+function MemoReact({ buttonText, onButtonClick }) {
+	console.log("re-render")
 	return (
-		<div>
+		<>
 			<h1>hello</h1>
-		</div>
+			<button onClick={onButtonClick}>{buttonText}</button>
+		</>
 	)
 }
 export default memo(MemoReact)
