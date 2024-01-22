@@ -15,11 +15,7 @@ function App() {
 			</button>
 			{show && (
 				<>
-<<<<<<< HEAD
 					{/* <UseEffect1 />, */}
-=======
-					{/* <UseEffect1 /> */}
->>>>>>> 0c43025454a3ebb374c9d9902ea9c0fbb4a871b0
 					<UseEffect2 />
 				</>
 			)}
