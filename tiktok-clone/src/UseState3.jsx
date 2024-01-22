@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 function UseState3() {
 	const [job, setJob] = useState("")
+	const jobRef = useRef(null)
 	const [jobs, setJobs] = useState(() => {
 		const storageJobs = JSON.parse(localStorage.getItem("jobs"))
 
@@ -16,6 +17,7 @@ function UseState3() {
 			return newJobs
 		})
 		setJob("")
+		jobRef.current.focus()
 	}
 
 	const handleDelete = (index) => {
@@ -31,7 +33,12 @@ function UseState3() {
 	return (
 		<div style={{ padding: 32 }}>
 			<h1>App3 || To to list</h1>
-			<input type="text" value={job} onChange={(e) => setJob(e.target.value)} />
+			<input
+				type="text"
+				ref={jobRef}
+				value={job}
+				onChange={(e) => setJob(e.target.value)}
+			/>
 			<button onClick={handleSubmit}>Add</button>
 			<ul>
 				{jobs.map((job, index) => (

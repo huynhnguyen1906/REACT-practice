@@ -13,8 +13,8 @@ root.render(
 	<React.StrictMode>
 		{/* <UseState1 /> */}
 		{/* <UseState2 /> */}
-		{/* <UseState3 /> */}
-		<App />
+		<UseState3 />
+		{/* <App /> */}
 	</React.StrictMode>
 )
 
