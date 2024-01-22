@@ -1,5 +1,6 @@
 import UseEffect1 from "./UseEffect1"
 import UseEffect2 from "./UseEffect2"
+import UseMemo from "./UseMemo"
 import { useState } from "react"
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
 			{show && (
 				<>
 					{/* <UseEffect1 />, */}
-					<UseEffect2 />
+					{/* <UseEffect2 /> */}
+					<UseMemo />
 				</>
 			)}
 		</div>
