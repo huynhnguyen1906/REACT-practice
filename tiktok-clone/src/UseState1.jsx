@@ -1,70 +1,54 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const orders = [100, 200, 300]
-const gifts = [
-	"cpu",
-	"ram",
-	"ssd",
-	"hdd",
-	"vga",
-	"monitor",
-	"keyboard",
-	"mouse",
-]
+const foods = [
+	{ name: "pizza", price: 100 },
+	{ name: "burger", price: 50 },
+	{ name: "coke", price: 30 },
+	{ name: "fries", price: 40 },
+];
 
 function UseState1() {
-	const [count, setCount] = useState(() => {
-		const total = orders.reduce((total, cur) => total + cur)
-		return total
-	})
-
+	foods.map((food, index) => {
+		console.log(food);
+	});
+	const [count, setCount] = useState(0);
 	const handleIncrease = () => {
-		setCount(count + 1)
-	}
+		setCount(count + 1);
+	};
 	const handleDecrease = () => {
-		setCount(count - 1)
-	}
-	const [name, setName] = useState({
-		firstName: "Nguyen",
-		lastName: "Van A",
-		age: 20,
-		address: "Ha Noi",
-	})
-	const handleUpdateInfo = () => {
-		setName({
-			firstName: "Nguyen",
-			lastName: "Van B",
-			age: 21,
-			address: "Japan",
-		})
-	}
-
-	const [gift, setGift] = useState()
-
-	const randomGift = () => {
-		const randomIndex = Math.floor(Math.random() * gifts.length)
-		setGift(gifts[randomIndex])
-	}
+		setCount(count - 1);
+	};
+	const [name, setName] = useState("aaa");
+	const handleChangeName = () => {
+		setName("fin");
+	};
+	const [show, setShow] = useState(false);
 
 	return (
 		<div className="App">
 			<h1>{count}</h1>
-			<button onClick={handleIncrease}>increase</button>
-			<button onClick={handleDecrease}>decrease</button>
-			<div>
-				<h1>
-					Name: {name.firstName} {name.lastName}
-				</h1>
-				<h2>{name.age}</h2>
-				<h2>{name.address}</h2>
-				<button onClick={handleUpdateInfo}>change name</button>
-			</div>
-			<div>
-				<h1>{gift || "chưa có phần thưởng"}</h1>
-				<button onClick={randomGift}>lấy thưởng</button>
-			</div>
+			<button onClick={handleDecrease}>down</button>
+			<button onClick={handleIncrease}>up</button>
+			<h1>{name}</h1>
+			<button onClick={handleChangeName}>change name</button>
+			<br />
+			<button
+				onClick={() => {
+					setShow(!show);
+				}}
+			>
+				show
+			</button>
+			{show && <h1>hello</h1>}
+			<ul>
+				{foods.map((food, index) => (
+					<li key={index}>
+						{food.name}-{food.price}
+					</li>
+				))}
+			</ul>
 		</div>
-	)
+	);
 }
 
-export default UseState1
+export default UseState1;
