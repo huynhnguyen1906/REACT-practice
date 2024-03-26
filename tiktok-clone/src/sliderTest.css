@@ -1,39 +1,53 @@
-.slick-slider {
-	width: 80%;
-	height: 60%;
-}
-.slick-slider div {
-	width: 100%;
-	height: 100%;
-}
-.slick-slider div img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
 .slider-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	/* スライド全体の高さと長さ */
 	height: 300px;
 	width: 500px;
 	background-color: antiquewhite;
 }
+
+.slick-slider {
+	/* 表示するイメージがスライド全体に対しての高さと長さ */
+	width: 80%;
+	height: 60%;
+}
+.slick-slider div {
+	/* ここはそのまま */
+	width: 100%;
+	height: 100%;
+}
+.slick-slider div img {
+	/* ここはそのまま */
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .slick-list {
+	/* ここはそのまま */
 	width: 100%;
 	height: 100%;
 }
 .slick-track {
+	/* ここはそのまま */
 	width: 100%;
 	height: 100%;
 }
 .slick-dots {
+	/* ここはそのまま */
 	width: 100%;
 	height: 50px;
 	bottom: -60px;
 	display: flex !important;
-	justify-content: center;
 	align-items: center;
+	flex-wrap: nowrap;
+	overflow: auto;
+	scrollbar-width: none;
+}
+.slick-dots::-webkit-scrollbar {
+	display: none;
 }
 
 .slick-dots li {
@@ -42,6 +56,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-shrink: 0;
 }
 .slick-dots li img {
 	width: 100%;
