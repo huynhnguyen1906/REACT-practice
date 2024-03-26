@@ -8,7 +8,7 @@ const foods = [
 ];
 
 function UseState1() {
-	foods.map((food, index) => {
+	foods.forEach((food, index) => {
 		console.log(food);
 	});
 	const [count, setCount] = useState(0);
