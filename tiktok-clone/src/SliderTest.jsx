@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./sliderTest.css";
 
+// ここに写真のURLを追加する
 const urls = [
 	"https://i.pinimg.com/736x/b9/c4/7e/b9c47ef70bff06613d397abfce02c6e7.jpg",
 	"https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg?auto=compress&fm=pjpg",
@@ -39,6 +40,7 @@ function SliderTest() {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		// ここから下小さい画像をクリックするとその画像に真ん中に移動するアニメーション
 		afterChange: (current) => {
 			const dotContainer =
 				sliderContainerRef.current.querySelector(".slick-dots");
