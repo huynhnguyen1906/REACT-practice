@@ -1,6 +1,7 @@
 // import UseEffect1 from "./UseEffect1"
 // import UseEffect2 from "./UseEffect2"
-import UseState1 from "./UseState1";
+// import UseState1 from "./UseState1";
+import UseState3 from "./UseState3";
 // import UseMemo from "./UseMemo";
 import { useState } from "react";
 
@@ -17,7 +18,7 @@ function App() {
 			</button>
 			{show && (
 				<>
-					<UseState1 />
+					<UseState3 />
 				</>
 			)}
 		</div>
