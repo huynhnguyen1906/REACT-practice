@@ -1,49 +1,27 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-const foods = [
-	{ name: "pizza", price: 100 },
-	{ name: "burger", price: 50 },
-	{ name: "coke", price: 30 },
-	{ name: "fries", price: 40 },
+// api を呼ぶ
+// news という配列にデータをget
+
+const news = [
+	{ title: "a", date: 2024 },
+	{ title: "b", date: 2023 },
+	{ title: "c", date: 2024 },
+	{ title: "d", date: 2023 },
+	{ title: "e", date: 2023 },
 ];
 
 function UseState1() {
-	foods.forEach((food, index) => {
-		console.log(food);
+	news.forEach((a, index) => {
+		console.log(index);
 	});
-	const [count, setCount] = useState(0);
-	const handleIncrease = () => {
-		setCount(count + 1);
-	};
-	const handleDecrease = () => {
-		setCount(count - 1);
-	};
-	const [name, setName] = useState("aaa");
-	const handleChangeName = () => {
-		setName("fin");
-	};
-	const [show, setShow] = useState(false);
 
 	return (
 		<div className="App">
-			<h1>{count}</h1>
-			<button onClick={handleDecrease}>down</button>
-			<button onClick={handleIncrease}>up</button>
-			<h1>{name}</h1>
-			<button onClick={handleChangeName}>change name</button>
-			<br />
-			<button
-				onClick={() => {
-					setShow(!show);
-				}}
-			>
-				show
-			</button>
-			{show && <h1>hello</h1>}
 			<ul>
-				{foods.map((food, index) => (
+				{news.map((news, index) => (
 					<li key={index}>
-						{food.name}-{food.price}
+						{news.title}-{news.date}
 					</li>
 				))}
 			</ul>
